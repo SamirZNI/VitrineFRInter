@@ -1,0 +1,86 @@
+/* RESET GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* HEADER */
+header {
+    background-color: #f3f3f3;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#carre {
+    background-color: #c45a00;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+/* SECTION PRINCIPALE */
+#principal {
+    height: 90vh;
+    background-image: url("Assets/photoAccueil.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+#principal h1 {
+    font-size: 50px;
+    max-width: 800px;
+}
+
+#principal p {
+    margin: 20px 0;
+    max-width: 700px;
+}
+
+#principal a {
+    background-color: #c45a00;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* AUTRES SECTIONS */
+#services,
+#realisations,
+#espaceProfessionnels,
+#apropos,
+#contact {
+    padding: 80px 40px;
+    text-align: center;
+}
