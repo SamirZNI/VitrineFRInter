@@ -1,4 +1,3 @@
-/* RESET GENERAL */
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +5,6 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* HEADER */
 header {
     background-color: #f3f3f3;
     padding: 15px 40px;
@@ -41,10 +39,9 @@ nav a {
     font-weight: 500;
 }
 
-/* SECTION PRINCIPALE */
 #principal {
     height: 90vh;
-    background-image: url("Assets/photoAccueil.jpg");
+    background-image: url("Assets/photoAccueil2.jpg");
     background-size: cover;
     background-position: center;
     display: flex;
@@ -75,7 +72,6 @@ nav a {
     font-weight: bold;
 }
 
-/* AUTRES SECTIONS */
 #services,
 #realisations,
 #espaceProfessionnels,
@@ -83,4 +79,69 @@ nav a {
 #contact {
     padding: 80px 40px;
     text-align: center;
+}
+
+#services {
+    background-color: #f0f2f0;
+}
+
+#services h2 {
+    font-size: 38px;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+}
+
+#services-intro {
+    font-size: 15px;
+    color: #666;
+    max-width: 560px;
+    margin: 0 auto 50px auto;
+    line-height: 1.7;
+}
+
+#services-grille {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+.carte-service {
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px 25px;
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.carte-service:hover {
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.14);
+    transform: translateY(-3px);
+}
+
+.carte-service-icone {
+    background-color: #fef3e2;
+    width: 52px;
+    height: 52px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.carte-service h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.carte-service p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.65;
 }
