@@ -8,10 +8,12 @@
   <body>
     <header>
       <div id="logo">
-        <div id="carre">FR</div>
+        <a href="#principal">
+          <div id="carre">FR</div>
+        </a>
         <h2>FR-Inter</h2>
       </div>
-
+      <!-- MENU -->
       <nav>
         <ul>
           <li><a href="#principal">Accueil</a></li>
@@ -19,11 +21,11 @@
           <li><a href="#realisations">Réalisations</a></li>
           <li><a href="#espaceProfessionnels">Espace Professionnels</a></li>
           <li><a href="#apropos">À propos</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact" class="nav-cta">Contact</a></li>
         </ul>
       </nav>
     </header>
-
+    <!-- ACCUEIL -->
     <main>
       <section id="principal">
         <h1>Transformez Vos Espaces en Œuvres d'Art</h1>
@@ -31,8 +33,10 @@
           FR-Inter, votre partenaire expert en aménagement et architecture
           d'intérieur
         </p>
-        <a href="#contact">Démarrer Votre Projet →</a>
+        <a href="#contact">Démarrer Votre Projet</a>
       </section>
+
+      <!-- SECTION SERVICES -->
 
       <section id="services">
         <h2>Nos Services</h2>
@@ -82,6 +86,8 @@
         </div>
       </section> 
 
+      <!-- SECTION REALISATIONS -->
+
       <section id="realisations">
         <h2>Nos Réalisations</h2>
         <p id="realisations-intro">
@@ -126,6 +132,8 @@
         </div>
       </section>
 
+      <!-- SECTION ESPACE PROFESSIONNELS -->
+
       <section id="espaceProfessionnels">
         <div id="pro-conteneur">
 
@@ -138,7 +146,7 @@
               <li>Gestion des demandes clients</li>
               <li>Suivi de chantier et contrôle qualité</li>
             </ul>
-            <a href="#contact">Parlons de votre projet →</a>
+            <a href="#contact">Parlons de votre projet</a>
           </div>
 
           <div id="pro-image">
@@ -148,9 +156,67 @@
         </div>
       </section>
 
+      <!-- SECTION À PROPOS -->
+
       <section id="apropos">
-        <h2>À propos</h2>
+        <div id="apropos-conteneur">
+
+          <!-- Image à gauche -->
+          <div id="apropos-image">
+            <img src="Assets/apropos.jpg" alt="Bureau FR-Inter" />
+            <div id="apropos-badge">
+              <span id="apropos-badge-chiffre">15+</span>
+              <span id="apropos-badge-texte">Années d'expérience</span>
+            </div>
+          </div>
+
+          <!-- Texte à droite -->
+          <div id="apropos-texte">
+            <h2>À Propos de FR-Inter</h2>
+            <p>Depuis plus de 15 ans, <strong>FR-Inter</strong> accompagne particuliers et professionnels dans la réalisation de leurs projets d'aménagement et d'architecture d'intérieur.</p>
+            <p>L'équipe met son expertise au service de vos envies pour créer des espaces uniques, fonctionnels et esthétiques qui vous ressemblent.</p>
+
+            <div id="apropos-valeurs">
+
+              <div class="valeur">
+                <div class="valeur-icone"><img src="Assets/excellence.png" alt="Excellence" /></div>
+                <div>
+                  <h3>Excellence</h3>
+                  <p>Un engagement constant vers la qualité et le perfectionnement</p>
+                </div>
+              </div>
+
+              <div class="valeur">
+                <div class="valeur-icone"><img src="Assets/accord.png" alt="Écoute" /></div>
+                <div>
+                  <h3>Écoute</h3>
+                  <p>Une attention particulière à vos besoins et vos envies</p>
+                </div>
+              </div>
+
+              <div class="valeur">
+                <div class="valeur-icone"><img src="Assets/innovation.png" alt="Innovation" /></div>
+                <div>
+                  <h3>Innovation</h3>
+                  <p>Des solutions créatives et tendances pour vos projets</p>
+                </div>
+              </div>
+
+              <div class="valeur">
+                <div class="valeur-icone"><img src="Assets/passion.png" alt="Passion" /></div>
+                <div>
+                  <h3>Passion</h3>
+                  <p>Un amour du design et de l'art de vivre</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
       </section>
+
+      <!-- SECTION CONTACT -->
 
       <section id="contact">
         <h2>Contactez-Nous</h2>
@@ -165,7 +231,7 @@
             <p>N'hésitez pas à nous contacter pour toute question ou pour prendre rendez-vous. Notre équipe se fera un plaisir de vous répondre.</p>
 
             <div class="contact-info">
-              <div class="contact-info-icone"></div>
+              <div class="contact-info-icone"><img src="Assets/email.png" alt="Conseil & Expertise" /></div>
               <div>
                 <strong>Email</strong>
                 <p>contact@fr-inter.fr</p>
@@ -174,7 +240,7 @@
             </div>
 
             <div class="contact-info">
-              <div class="contact-info-icone"></div>
+              <div class="contact-info-icone"><img src="Assets/localisation.png" alt="Conseil & Expertise" /></div>
               <div>
                 <strong>Adresse</strong>
                 <p>13 Rue Jacques Peirotes</p>
@@ -225,11 +291,50 @@
     </main>
 
     <footer>
-      <div id="footer-logo">
-        <div id="carre">FR</div>
-        <span>FR-Inter</span>
+      <div id="footer-conteneur">
+
+        <!-- Colonne 1 : Logo + slogan -->
+        <div class="footer-col">
+          <div id="footer-logo">
+            <div id="carre">FR</div>
+            <span>FR-Inter</span>
+          </div>
+          <p id="footer-slogan">Votre espace, notre passion.</p>
+          <p id="footer-adresse">13 Rue Jacques Peirotes<br>67000 Strasbourg, France</p>
+        </div>
+
+        <!-- Colonne 2 : Navigation -->
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-liens">
+            <li><a href="#principal">Accueil</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#realisations">Réalisations</a></li>
+            <li><a href="#espaceProfessionnels">Espace Professionnels</a></li>
+            <li><a href="#apropos">À propos</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Colonne 3 : Légal -->
+        <div class="footer-col">
+          <h4>Informations légales</h4>
+          <ul class="footer-liens">
+            <li><a href="#">CGV</a></li>
+          </ul>
+        </div>
+
       </div>
-      <p>&copy; 2026 FR-Inter. Tous droits réservés.</p>
+
+      <div id="footer-bas">
+        <p>&copy; 2026 FR-Inter — Tous droits réservés</p>
+      </div>
+
     </footer>
+
+    <script>
+
+    </script>
   </body>
+
 </html>
