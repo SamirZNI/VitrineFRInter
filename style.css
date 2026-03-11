@@ -82,19 +82,20 @@ nav a:hover {
 
 .nav-cta {
     background-color: #c45a00;
-    color: white !important;
+    color: white ;
     padding: 9px 20px;
     border-radius: 8px;
     font-weight: 600;
 }
 
 .nav-cta::after {
-    display: none !important;
+    display: none ;
 }
 
 .nav-cta:hover {
-    background-color: #a04900 !important;
-    color: white !important;
+    background-color: #ac4e01;
+    color: white ;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.285);
 }
 
 /* SECTION PRINCIPALE */
@@ -131,6 +132,11 @@ nav a:hover {
     text-decoration: none;
     color: white;
     font-weight: bold;
+}
+
+#principal a:hover {
+    background-color: #a04900;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.819);
 }
 
 #services,
@@ -358,11 +364,12 @@ nav a:hover {
 
 #pro-texte a:hover {
     background-color: #a04900;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.819);
 }
 
 #pro-image {
     border-radius: 12px;
-    overflow: hidden;
+    overflow: hidden; /* Assure que les éléments à l'intérieur ne dépassent pas les bords arrondis */
     height: 420px;
     background-color: #2a2a2a;
 }
@@ -382,7 +389,7 @@ nav a:hover {
 
 #apropos-conteneur {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* Permet d'avoir deux colonnes de largeur égale */
     gap: 60px;
     max-width: 1200px;
     margin: 0 auto;
@@ -403,30 +410,6 @@ nav a:hover {
     object-fit: cover;
     border-radius: 12px;
     background-color: #ccc;
-}
-
-#apropos-badge {
-    position: absolute;
-    bottom: -20px;
-    right: -10px;
-    background-color: #c45a00;
-    color: white;
-    padding: 20px 25px;
-    border-radius: 12px;
-    text-align: center;
-}
-
-#apropos-badge-chiffre {
-    display: block;
-    font-size: 42px;
-    font-weight: bold;
-    line-height: 1;
-}
-
-#apropos-badge-texte {
-    display: block;
-    font-size: 13px;
-    margin-top: 5px;
 }
 
 /* Texte */
@@ -747,20 +730,34 @@ footer {
     color: #444;
 }
 
-@keyframes apparition {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Bouton PARTICULIER/PROFESSIONNEL */
+
+#choix-type {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
 }
 
-section {
-  animation: apparition 0.7s ease forwards;
-  animation-timeline: view();
-  animation-range: entry 0% entry 20%;
+.btn-type {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: white;
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.2s;
 }
 
+.btn-type:hover {
+    border-color: #c45a00;
+    color: #c45a00;
+}
+
+.btn-type.actif {
+    background-color: #c45a00;
+    border-color: #c45a00;
+    color: white;
+}

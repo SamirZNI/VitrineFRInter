@@ -165,8 +165,6 @@
           <div id="apropos-image">
             <img src="Assets/apropos.jpg" alt="Bureau FR-Inter" />
             <div id="apropos-badge">
-              <span id="apropos-badge-chiffre">15+</span>
-              <span id="apropos-badge-texte">Années d'expérience</span>
             </div>
           </div>
 
@@ -260,7 +258,14 @@
           <div id="contact-formulaire">
             <h3>Envoyez-nous un message</h3>
 
-            <form action="#" method="post">
+            <!-- Boutons de sélection -->
+            <div id="choix-type">
+              <button type="button" class="btn-type actif" onclick="afficherFormulaire('particulier')">Particulier</button>
+              <button type="button" class="btn-type" onclick="afficherFormulaire('professionnel')">Professionnel</button>
+            </div>
+
+            <!-- Formulaire Particulier -->
+            <form id="form-particulier" action="#" method="post">
 
               <div class="champ-groupe">
                 <label for="nom">Nom complet *</label>
@@ -285,7 +290,43 @@
               <button type="submit">Envoyer le message</button>
 
             </form>
+
+            <!-- Formulaire Professionnel -->
+            <form id="form-professionnel" action="#" method="post" style="display: none;">
+
+              <div class="champ-groupe">
+                <label for="nom-pro">Nom complet *</label>
+                <input type="text" id="nom-pro" name="nom" placeholder="Jean Dupont" required />
+              </div>
+
+              <div class="champ-groupe">
+                <label for="entreprise">Entreprise *</label>
+                <input type="text" id="entreprise" name="entreprise" placeholder="Nom de votre entreprise" required />
+              </div>
+
+              <div class="champ-groupe">
+                <label for="email-pro">Email *</label>
+                <input type="email" id="email-pro" name="email" placeholder="jean.dupont@entreprise.fr" required />
+              </div>
+
+              <div class="champ-groupe">
+                <label for="type-projet">Type de projet</label>
+                <input type="text" id="type-projet" name="type-projet" placeholder="Ex : aménagement bureau, rénovation..." />
+              </div>
+
+              <div class="champ-groupe">
+                <label for="message-pro">Message *</label>
+                <textarea id="message-pro" name="message" rows="5" placeholder="Décrivez votre projet..." required></textarea>
+              </div>
+
+              <button type="submit">Envoyer le message</button>
+
+            </form>
+
           </div>
+
+        </div>
+      </section>
 
         </div>
     </main>
@@ -333,8 +374,20 @@
     </footer>
 
     <script>
+      function afficherFormulaire(type) {
+        // Afficher le bon formulaire
+        document.getElementById('form-particulier').style.display = type === 'particulier' ? 'block' : 'none'; // Affiche le formulaire particulier si le type est 'particulier', sinon le cache
+        document.getElementById('form-professionnel').style.display = type === 'professionnel' ? 'block' : 'none'; // Affiche le formulaire professionnel si le type est 'professionnel', sinon le cache
 
+        // Mettre à jour les boutons
+        var boutons = document.querySelectorAll('.btn-type'); // Sélectionne tous les boutons de type
+        boutons.forEach(function(bouton) { // Parcourt tous les boutons et retire la classe 'actif' de chacun
+          bouton.classList.remove('actif'); // Retire la classe 'actif' de tous les boutons pour réinitialiser leur état
+        });
+        event.target.classList.add('actif');
+      }
     </script>
+
   </body>
 
 </html>
