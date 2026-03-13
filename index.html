@@ -140,13 +140,16 @@
           <div id="pro-texte">
             <h2>Vous êtes professionnel<br>de l'architecture ?</h2>
             <p>FR-Inter s'associe aux architectes, décorateurs et promoteurs pour donner vie aux projets de leurs clients.</p>
+
             <ul id="pro-liste">
               <li>Conseil et expertise technique</li>
               <li>Co-conception et design intérieur</li>
               <li>Gestion des demandes clients</li>
               <li>Suivi de chantier et contrôle qualité</li>
             </ul>
+
             <a href="#contact">Parlons de votre projet</a>
+
           </div>
 
           <div id="pro-image">
@@ -265,7 +268,7 @@
             </div>
 
             <!-- Formulaire Particulier -->
-            <form id="form-particulier" action="#" method="post">
+            <form id="form-particulier" action="formulaire.php" method="post">
 
               <div class="champ-groupe">
                 <label for="nom">Nom complet *</label>
@@ -292,7 +295,7 @@
             </form>
 
             <!-- Formulaire Professionnel -->
-            <form id="form-professionnel" action="#" method="post" style="display: none;">
+            <form id="form-professionnel" action="formulaire.php" method="post" style="display: none;">
 
               <div class="champ-groupe">
                 <label for="nom-pro">Nom complet *</label>
@@ -361,7 +364,7 @@
         <div class="footer-col">
           <h4>Informations légales</h4>
           <ul class="footer-liens">
-            <li><a href="#">CGV</a></li>
+            <li><a href="cgv.html">CGV</a></li>
           </ul>
         </div>
 
@@ -384,7 +387,7 @@
         boutons.forEach(function(bouton) { // Parcourt tous les boutons et retire la classe 'actif' de chacun
           bouton.classList.remove('actif'); // Retire la classe 'actif' de tous les boutons pour réinitialiser leur état
         });
-        event.target.classList.add('actif');
+        event.target.classList.add('actif'); // Ajoute la classe 'actif' au bouton cliqué pour le mettre en surbrillance
       }
     </script>
 
