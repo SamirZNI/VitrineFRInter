@@ -246,7 +246,7 @@
                 <strong>Adresse</strong>
                 <p>13 Rue Jacques Peirotes</p>
                 <p>67000 Strasbourg, France</p>
-              </div>
+              </div>git 
             </div>
 
             <div id="contact-horaires">
@@ -289,7 +289,7 @@
                 <label for="message">Message *</label>
                 <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet..." required></textarea>
               </div>
-
+              <input type="text" id="honeypot-particulier" name="honeypot" style="display:none;">
               <button type="submit">Envoyer le message</button>
 
             </form>
@@ -321,7 +321,8 @@
                 <label for="message-pro">Message *</label>
                 <textarea id="message-pro" name="message" rows="5" placeholder="Décrivez votre projet..." required></textarea>
               </div>
-
+              <!-- Honeypot — champ caché, ne pas remplir -->
+              <input type="text" id="honeypot-professionnel" name="honeypot" style="display:none;">
               <button type="submit">Envoyer le message</button>
 
             </form>
@@ -376,20 +377,74 @@
 
     </footer>
 
-    <script>
-      function afficherFormulaire(type) {
-        // Afficher le bon formulaire
-        document.getElementById('form-particulier').style.display = type === 'particulier' ? 'block' : 'none'; // Affiche le formulaire particulier si le type est 'particulier', sinon le cache
-        document.getElementById('form-professionnel').style.display = type === 'professionnel' ? 'block' : 'none'; // Affiche le formulaire professionnel si le type est 'professionnel', sinon le cache
+<script>
+  // Affiche le bon formulaire selon le bouton cliqué
+  function afficherFormulaire(type) {
+    document.getElementById('form-particulier').style.display = type === 'particulier' ? 'block' : 'none';
+    document.getElementById('form-professionnel').style.display = type === 'professionnel' ? 'block' : 'none';
 
-        // Mettre à jour les boutons
-        var boutons = document.querySelectorAll('.btn-type'); // Sélectionne tous les boutons de type
-        boutons.forEach(function(bouton) { // Parcourt tous les boutons et retire la classe 'actif' de chacun
-          bouton.classList.remove('actif'); // Retire la classe 'actif' de tous les boutons pour réinitialiser leur état
-        });
-        event.target.classList.add('actif'); // Ajoute la classe 'actif' au bouton cliqué pour le mettre en surbrillance
-      }
-    </script>
+    var boutons = document.querySelectorAll('.btn-type');
+    boutons.forEach(function(bouton) {
+      bouton.classList.remove('actif'); /* Supprime la classe actif de tous les boutons */
+    });
+    event.target.classList.add('actif'); /* Ajoute la classe actif au bouton cliqué */
+  }
+
+  // Vérifie que l'email contient @ et un point
+  function validerEmail(email) {
+    var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  }
+
+  // Vérifie que le téléphone contient exactement 10 chiffres
+  function validerTelephone(telephone) {
+    var regex = /^[0-9]{10}$/;
+    return regex.test(telephone);
+  }
+
+  // Validation du formulaire particulier à l'envoi
+  document.getElementById('form-particulier').addEventListener('submit', function(evenement) { /* Écoute l'événement de soumission du formulaire particulier */
+    var email = document.getElementById('email').value;
+    var telephone = document.getElementById('tel').value;
+    var honeypot = document.getElementById('honeypot-particulier').value; /* Récupère la valeur du champ honeypot */
+
+    if (honeypot != '') {
+      evenement.preventDefault(); /* Empêche l'envoi du formulaire */
+      alert('Erreur.');
+      return;
+    }
+
+    if (!validerEmail(email)) {
+      evenement.preventDefault();
+      alert('Email invalide.');
+      return;
+    }
+
+    if (!validerTelephone(telephone)) {
+      evenement.preventDefault();
+      alert('Téléphone invalide, 10 chiffres requis.');
+      return;
+    }
+  });
+
+  // Validation du formulaire professionnel à l'envoi
+  document.getElementById('form-professionnel').addEventListener('submit', function(evenement) {
+    var email = document.getElementById('email-pro').value;
+    var honeypot = document.getElementById('honeypot-professionnel').value;
+
+    if (honeypot != '') {
+      evenement.preventDefault();
+      alert('Erreur.');
+      return;
+    }
+
+    if (!validerEmail(email)) {
+      evenement.preventDefault();
+      alert('Email invalide.');
+      return;
+    }
+  });
+</script>
 
   </body>
 
