@@ -23,19 +23,12 @@ header {
 
 /* Le carré du logo */ /* J'ai déplacé ce carre ici pour éviter les conflits avec le carré du footer */
 #carre {
-<<<<<<< HEAD
   background-color: #c45a00;
   color: white;
   padding: 8px 12px;
   border-radius: 8px;
   font-weight: bold;
-=======
-    background-color: #c45a00;
-    color: white;
-    padding: 9px 12px;
-    border-radius: 8px;
-    font-weight: bold;
->>>>>>> 14707ab8a554e7d8f943da634f31f7a0616d282b
+
 }
 
 nav ul {
